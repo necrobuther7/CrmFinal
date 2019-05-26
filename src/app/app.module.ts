@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Import services
 import { AuthService } from './services/auth.service';
+import { ToastNotificationsModule } from 'ngx-toast-notifications';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -38,7 +39,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    }),
+    ToastNotificationsModule.forRoot()
   ],
   declarations: [
     AppComponent,

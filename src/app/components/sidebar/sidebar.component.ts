@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { Toaster } from 'ngx-toast-notifications';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -16,7 +19,7 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/typography', title: 'Typography',  icon: 'library_books', class: '' },
     // { path: '/icons', title: 'Icons',  icon: 'bubble_chart', class: '' },
     // { path: '/maps', title: 'Maps',  icon: 'location_on', class: '' },
-    // { path: '/notifications', title: 'Notifications',  icon: 'notifications', class: '' },
+    { path: '/notifications', title: 'Notifications',  icon: 'notifications', class: '' }
     // { path: '/upgrade', title: 'Upgrade to PRO',  icon: 'unarchive', class: 'active-pro' },
 ];
 
@@ -28,10 +31,20 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() { }
+  constructor(private auth: AuthService,
+              private toast: Toaster,
+              private router: Router) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+  }
+  logout() {
+    this.auth.exitSession();
+    this.showNotification('Su sesión a finalizado.', 'Vuelva Pronto...', 3000, 'success');
+    // espera de 3.5 milisegundos para inicio de sesión
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 3500);
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
@@ -39,4 +52,12 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+  showNotification(message: string, caption: string, duration: number, type: string) {
+    this.toast.open({
+      text: message,
+      caption: caption,
+      duration: duration,
+      type: type
+    });
+  }
 }

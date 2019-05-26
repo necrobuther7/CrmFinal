@@ -2,57 +2,76 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, throwError, of} from 'rxjs';
 import { retry, catchError, map } from 'rxjs/operators';
-import { SystemUser } from '../Models/system-user';
+import { isNullOrUndefined } from 'util';
 
 /* @Injectable({
   providedIn: 'root'
 }) */
 
-const token = localStorage.getItem('currentUser');
-const httpOptions1 = {
-  headers: new HttpHeaders({
-    'x-auth-token': token,
-  }),
-  responseType: 'json' as any
-}
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  }),
-  responseType: 'json' as any
-}
-
 @Injectable()
 export class AuthService {
-    // private uri = 'http://localhost:3000';
-    private uri = 'https://finalprojectapi.herokuapp.com';
+
+  token = localStorage.getItem('userK');
+  httpOptions1 = {
+    headers: new HttpHeaders({
+      'x-auth-token': this.token,
+    }),
+    responseType: 'json' as any
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    }),
+    responseType: 'json' as any
+  }
+  private uri = 'https://finalprojectapi.herokuapp.com';
 
     constructor ( private http: HttpClient ) {
       console.log('Auth state: active');
     }
-
-    getUsers (): Observable<User1[]> {
+    // obtain all user
+    getUsers(): Observable<User1> {
       console.log('data from users...');
-      return this.http.get<User1[]>(this.uri + '/api/user', httpOptions1)
+      return this.http.get<User1>(this.uri + '/api/user', this.httpOptions1)
       .pipe(
         retry(1),
         catchError(this.handleError)
-      )
+      );
     }
-    // "node": "6.11.1",
+    // Authentication function
     authentication(correo: string, contrasena: string): Observable<any> {
-      return this.http.post<any>(this.uri + '/api/auth', {correo, contrasena}, httpOptions)
-        .pipe(map(user => {
-          if (user) {
-            console.log('auth response: ' + user.token);
-            localStorage.setItem('currentUser', user.token);
-          } else if (user === undefined) {
-            console.log('auth failed');
-            localStorage.removeItem('currentUser');
-          }
-        })
-      )
+      return this.http.post<any>(this.uri + '/api/auth', {correo, contrasena}, this.httpOptions)
+        .pipe(map(user => user));
+      }
+
+    // Create Token and session
+    setSession(user: string): void {
+      const userLogin = JSON.stringify(user);
+      localStorage.setItem('userL', userLogin);
+    }
+
+    setSessionToken(key: string): void {
+      localStorage.setItem('userK', key);
+    }
+
+    getSession() {
+      const userLogin = localStorage.getItem('userL');
+      if (!isNullOrUndefined(userLogin)) {
+        const user = JSON.parse(userLogin);
+        return user;
+      } else {
+        return null;
+      }
+    }
+
+    getSessionToken() {
+      return localStorage.getItem('userK');
+    }
+
+    exitSession() {
+      localStorage.removeItem('userL');
+      localStorage.removeItem('userK');
     }
 
      // Error handling

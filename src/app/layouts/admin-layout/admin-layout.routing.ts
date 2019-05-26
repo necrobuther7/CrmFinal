@@ -12,6 +12,9 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 // personalizados
 import { LoginComponent } from '../../login/login.component';
 
+// protección a rutas
+import { GuardsGeneralGuard } from '../../guards/guards-general.guard';
+
 export const AdminLayoutRoutes: Routes = [
     // {
     //   path: '',
@@ -55,13 +58,13 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'login',          component: LoginComponent },
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'table-list',     component: TableListComponent },
-    { path: 'typography',     component: TypographyComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent },
-    { path: 'notifications',  component: NotificationsComponent },
-    { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'login',          component: LoginComponent,            },
+    { path: 'dashboard',      component: DashboardComponent,        canActivate: [GuardsGeneralGuard] },
+    { path: 'user-profile',   component: UserProfileComponent,      canActivate: [GuardsGeneralGuard] },
+    { path: 'table-list',     component: TableListComponent,        canActivate: [GuardsGeneralGuard] },
+    { path: 'typography',     component: TypographyComponent,       canActivate: [GuardsGeneralGuard] },
+    { path: 'icons',          component: IconsComponent,            canActivate: [GuardsGeneralGuard] },
+    { path: 'maps',           component: MapsComponent,             canActivate: [GuardsGeneralGuard] },
+    { path: 'notifications',  component: NotificationsComponent,    canActivate: [GuardsGeneralGuard] },
+    { path: 'upgrade',        component: UpgradeComponent,          canActivate: [GuardsGeneralGuard] },
 ];
