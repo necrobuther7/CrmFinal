@@ -8,17 +8,17 @@ declare var $: any;
 export class NotificationsComponent implements OnInit {
 
   constructor() { }
-  showNotification(from: string, align: string, textMessage: string, typeMessage: number) {
+  showNotification(from: string, align: string) {
       const type = ['', 'info', 'success', 'warning', 'danger'];
 
-      // const color = Math.floor((Math.random() * 4) + 1);
+      const color = Math.floor((Math.random() * 4) + 1);
 
       $.notify({
           icon: 'notifications',
-          message: textMessage
+          message: 'test'
       },
       {
-        type: type[typeMessage],
+        type: color,
         timer: 1500,
         placement: {
             from: from,
