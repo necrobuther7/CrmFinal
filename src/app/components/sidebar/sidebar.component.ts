@@ -39,25 +39,18 @@ export class SidebarComponent implements OnInit {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
   logout() {
+    let message = 'Su sesión a finalizado. Vuelva Pronto...';
     this.auth.exitSession();
-    this.showNotification('Su sesión a finalizado.', 'Vuelva Pronto...', 3000, 'success');
+    this.auth.showNotification('top', 'right', message, 1, 0);
     // espera de 3.5 milisegundos para inicio de sesión
     setTimeout(() => {
-      this.router.navigate(['/login']);
+    this.router.navigate(['/login']);
     }, 3500);
-  }
+}
   isMobileMenu() {
       if ($(window).width() > 991) {
           return false;
       }
       return true;
   };
-  showNotification(message: string, caption: string, duration: number, type: string) {
-    this.toast.open({
-      text: message,
-      caption: caption,
-      duration: duration,
-      type: type
-    });
-  }
 }

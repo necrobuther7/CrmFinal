@@ -16,11 +16,10 @@ export class NotificationsComponent implements OnInit {
       $.notify({
           icon: 'notifications',
           message: textMessage
-
       },
       {
         type: type[typeMessage],
-        timer: 4000,
+        timer: 1500,
         placement: {
             from: from,
             align: align

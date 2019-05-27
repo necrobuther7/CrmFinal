@@ -3,7 +3,6 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { Toaster } from 'ngx-toast-notifications';
 
 @Component({
   selector: 'app-navbar',
@@ -20,8 +19,7 @@ export class NavbarComponent implements OnInit {
     constructor(location: Location,
         private element: ElementRef,
         private router: Router,
-        private auth: AuthService,
-        private toast: Toaster) {
+        private auth: AuthService) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -151,20 +149,12 @@ export class NavbarComponent implements OnInit {
     }
 
     logout() {
+        let message = 'Su sesión a finalizado. Vuelva Pronto...';
         this.auth.exitSession();
-        this.showNotification('Su sesión a finalizado.', 'Vuelva Pronto...', 3000, 'success');
+        this.auth.showNotification('top', 'right', message, 1, 0);
         // espera de 3.5 milisegundos para inicio de sesión
         setTimeout(() => {
         this.router.navigate(['/login']);
         }, 3500);
     }
-
-    showNotification(message: string, caption: string, duration: number, type: string) {
-        this.toast.open({
-          text: message,
-          caption: caption,
-          duration: duration,
-          type: type
-        });
-      }
 }
