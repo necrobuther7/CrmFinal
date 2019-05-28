@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import { HttpClient, HttpErrorResponse  } from '@angular/common/http';
-import { Pqr } from 'app/Models/pqr';
+import { Pqr } from '../Models/Pqr';
 import { Router } from '@angular/router';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import { DataSource } from '@angular/cdk/table';

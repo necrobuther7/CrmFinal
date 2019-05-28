@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pqr } from 'app/Models/pqr';
+import { Pqr } from '../../Models/Pqr';
 import { HttpClient, HttpErrorResponse  } from '@angular/common/http';
-import { Estado } from 'app/Models/Estado';
+import { Estado } from '../../Models/Estado';
 
 @Component({
   selector: 'app-editar',
