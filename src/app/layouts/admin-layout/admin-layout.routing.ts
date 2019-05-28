@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
+import { EditarComponent } from '../../table-list/editar/editar.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
@@ -20,6 +21,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent,        canActivate: [GuardsGeneralGuard] },
     { path: 'user-profile',   component: UserProfileComponent,      canActivate: [GuardsGeneralGuard] },
     { path: 'table-list',     component: TableListComponent,        canActivate: [GuardsGeneralGuard] },
+    { path: 'editar',         component: EditarComponent,           canActivate: [GuardsGeneralGuard] },
     { path: 'typography',     component: TypographyComponent,       canActivate: [GuardsGeneralGuard] },
     { path: 'icons',          component: IconsComponent,            canActivate: [GuardsGeneralGuard] },
     { path: 'maps',           component: MapsComponent,             canActivate: [GuardsGeneralGuard] },

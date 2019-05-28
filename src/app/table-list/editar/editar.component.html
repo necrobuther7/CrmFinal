@@ -1,0 +1,52 @@
+<div class="container col-md-4">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-header card-header-tabs card-header-primary">
+                      <h4 class="card-title">Modificar Tarea</h4>
+                      <p class="card-category"></p>
+                      
+            </div>
+             <form action="">
+              <div class="form-group" >
+                <label>Tipo: </label>
+                <input [(ngModel)]="pqr.tipo_pqr" name="tipo" type="text" class="form-control" disabled="true">
+              </div>
+              <div class="form-group">
+                <label>Descripcion: </label>
+                <input [(ngModel)]="pqr.descripcion_pqr" name="Descripcion" class="form-control" disabled="true">
+              </div>
+              <div class="form-group">
+                <label>Estado: </label>
+                <mat-form-field>
+                    <mat-select [(ngModel)]="pqr.estado_pqr.id_estado" name="estado">
+                    <mat-option *ngFor="let estado of estados" [value]="estado.id_estado">
+                        {{estado.estado}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <label>Respuesta: </label> 
+                <input [(ngModel)]="pqr.respuesta_pqr" type="text" name="respuesta" class="form-control">
+              </div>
+              <div class="form-group" style="display: none;">
+                <label>Medio Comunicacion: </label>
+                <input [(ngModel)]="pqr.id_medio_comunicacion.id_medio" name="comunicacion" type="text" class="form-control">
+              </div>
+
+              <div class="form-group" style="display: none;">
+                <label>Fecha: </label>
+                <input [(ngModel)]="pqr.fecha_pqr" type="text" name="fecha" class="form-control">
+              </div>
+              <div class="form-group" style="display: none;">
+                <label>Cliente: </label>
+                <input [(ngModel)]="pqr.id_cliente.id_cliente" type="text" name="cliente" class="form-control">
+              </div>
+              <div class="row" style="justify-content: center;">
+                <button (click)="regresar()" class="btn btn-danger pull-left">Regresar</button>
+                <button  (click)="actualizar(pqr)" class="btn btn-primary pull-right">Actualizar</button>
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
