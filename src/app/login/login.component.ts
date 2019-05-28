@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, User1 } from '../services/auth.service';
+import { AuthService, User } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
 
 export class LoginComponent implements OnInit {
   error = '';
-  usuarios: User1 [] = [];
+  usuario: User;
   constructor( private auth: AuthService,
                 private router: Router
               ) { }
@@ -45,12 +45,10 @@ export class LoginComponent implements OnInit {
         this.auth.showNotification('top', 'right', message, 2, 0);
         this.auth.setSession(data.user);
         this.auth.setSessionToken(data.token);
+        const idSession = this.auth.getSession();
+        console.log('identificador : ' + idSession.idUser);
         // consulta al api para traer los datos
-       /*  this.auth.getUsers().subscribe( data1 => {
-          this.usuarios = data1;
-          console.log(this.usuarios.result);
-        }); */
-        // espera de 3.5 milisegundos para inicio de sesión
+        this.dataUser(parseInt(idSession.idUser, 0));
         setTimeout(() => {
           this.router.navigate(['/dashboard']);
         }, 3500);
@@ -59,16 +57,14 @@ export class LoginComponent implements OnInit {
         this.error = error;
         message = 'Oppsss, Algo va mal... Verifique sus credenciales !';
         this.auth.showNotification('top', 'right', message, 4, 2);
-        // this.showNotification('Por favor, verifique sus credenciales e Intente de nuevo !', 'Algo va mal...', 3000, 'danger');
       });
   }
 
-  /* showNotification(message: string, caption: string, duration: number, type: string) {
-    this.toast.open({
-      text: message,
-      caption: caption,
-      duration: duration,
-      type: type
-    });
-   } */
+  dataUser(id: number) {
+    this.auth.getUser(id)
+      .subscribe( user => {
+        console.log(user);
+        this.usuario = user;
+    })
+  }
 }

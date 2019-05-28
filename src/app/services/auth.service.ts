@@ -5,17 +5,26 @@ import { retry, catchError, map } from 'rxjs/operators';
 import { isNullOrUndefined } from 'util';
 declare var $: any;
 
-/* @Injectable({
-  providedIn: 'root'
-}) */
+export interface User {
+  idUser: Number;
+  correo: String;
+  idTipoUsuario: Number;
+  estado: Boolean;
+  nombres: String;
+  apellidos: String;
+  identificacion: string;
+  tipousuario: {
+    idTipoUsuario: Number;
+    tipoUsuario: String;
+  };
+}
 
 @Injectable()
 export class AuthService {
 
-  token = localStorage.getItem('userK');
   httpOptions1 = {
     headers: new HttpHeaders({
-      'x-auth-token': this.token,
+      'x-auth-token': localStorage.getItem('userK'),
     }),
     responseType: 'json' as any
   }
@@ -26,15 +35,15 @@ export class AuthService {
     }),
     responseType: 'json' as any
   }
-  private uri = 'https://finalprojectapi.herokuapp.com';
 
+  private uri = 'https://finalprojectapi.herokuapp.com';
     constructor ( private http: HttpClient ) {
       console.log('Auth state: active');
     }
-    // obtain all user
-    getUsers(): Observable<User1> {
+    // obtain current user
+    getUser(id): Observable<User> {
       console.log('data from users...');
-      return this.http.get<User1>(this.uri + '/api/user', this.httpOptions1)
+      return this.http.get<User>(this.uri + '/api/user/' + id , this.httpOptions1)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -121,16 +130,3 @@ export class AuthService {
   }
 }
 
-export interface User1 {
-  idUser: Number;
-  correo: String;
-  idTipoUsuario: Number;
-  estado: Boolean;
-  nombres: String;
-  apellidos: String;
-  identificacion: Number;
-  tipousuario: {
-    idTipoUsuario: Number;
-    tipoUsuario: String;
-  };
-}

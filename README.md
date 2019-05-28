@@ -1,39 +1,30 @@
-# [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]
+# [CRM- UNIVERSIDAD EL BOSQUE](https://crm-ub.herokuapp.com/)[![version][version-badge]][CHANGELOG]
 
-![alt text](http://s3.amazonaws.com/creativetim_bucket/products/53/original/opt_md_angular_thumbnail.jpg "Material Dashboard Angular Free")
+**[CRM- UNIVERSIDAD EL BOSQUE](https://crm-ub.herokuapp.com/)** este es en trabajo academico para la asignatura "Ingniería de Software II", con fines netamente académicos.
 
-**[Material Dashboard Angular](https://www.creative-tim.com/product/material-dashboard-angular2/)** is a free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard was built over the popular Bootstrap framework and it comes with a couple of third-party plugins redesigned to fit in with the rest of the elements.
+este comprende de una plantilla modificada con todas las funcionalidades principales de un CRM como lo son:
 
-Material Dashboard makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
+1.Modulo de gestión de contactos
+2.Módulo de seguimiento de interacciones
+3.Flujo de tareas
+4.Generador de indicadores y KPI's
 
-This product came as a result of users asking for a material dashboard after we released our successful [Material Kit](http://www.creative-tim.com/product/material-kit). We developed it based on your feedback and it is a powerful bootstrap admin dashboard, which allows you to build products like admin panels, content managements systems and CRMs.
+Este proyecto es presentado por el equipo de I semestre del año 2019, jornada nocturna y dirigido para aval al señor Ricardo Carmargo, tutor y cliente de la aplicación.
 
-Material Dashboard comes with 5 color filter choices for both the sidebar and the card headers (blue, green, orange, red and purple) and an option to have a background image on the sidebar.
+De igualmanera distinguimos y extendemos agradecimiento a cada uno de los que aporto para la construcción del mismo. esto sin dejar atrás a los creadores de la plantilla: [Federico - Bootstrap Material Design](http://fezvrasta.github.io/bootstrap-material-design/) y [Robert McIntosh](https://github.com/mouse0270/bootstrap-notify) for the notification system.[Chartist](https://gionkunz.github.io/chartist-js/) a todo ellos gratitud por compartir su trabajo y permitir a muchos hacer uso de estos recursos para el apredizaje.
 
-Material Dashboard uses a framework built by our friend [Federico - Bootstrap Material Design](http://fezvrasta.github.io/bootstrap-material-design/), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
-
-Special thanks go to:
-[Robert McIntosh](https://github.com/mouse0270/bootstrap-notify) for the notification system.
-[Chartist](https://gionkunz.github.io/chartist-js/) for the wonderful charts.
-We are very excited to share this dashboard with you and we look forward to hearing your feedback!
-
-You can find the Github Repo here.
-
-## Links:
-
-+ [Live Preview](https://www.creative-tim.com/product/material-dashboard-angular2)
-+ [Material Kit - For Front End Development](http://www.creative-tim.com/product/material-kit?ref=github-md-angular)
++ [Live Preview - Applicación](https://crm-ub.herokuapp.com/)
 
 ## Quick start
 
-Quick start options:
+Plantilla descargada de :
 
 - [Download from Github](https://github.com/tiniestory/material-dashboard-angular2/archive/master.zip).
 - [Download from Creative Tim](http://www.creative-tim.com/product/material-dashboard-angular2).
 
 ## Terminal Commands
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0 and angular 4.x.
+Pasos en la instalación de la plantilla
 
 1. Install NodeJs from [NodeJs Official Page](https://nodejs.org/en).
 2. Open Terminal
@@ -46,7 +37,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### What's included
 
-Within the download you'll find the following directories and files:
+la Plantilla original trae los siguientes archivos y carpetas:
 
 ```
 material-dashboard-angular
