@@ -15,7 +15,7 @@ export class ClienteComponent implements OnInit {
     this.consultarIndiceDeFidelizacion();
   }
 
-  private indiceDeFidelizacion: any = null;
+  indiceDeFidelizacion: any = null;
   consultarIndiceDeFidelizacion() {
     this._service.consultarIndideDeFidelizacion().subscribe((res) => {
       this.indiceDeFidelizacion = res;

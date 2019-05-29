@@ -10,7 +10,7 @@ import { ServicioService } from 'app/dashboard/servicio/servicio.service';
 })
 export class VentaComponent implements OnInit {
 
-  private listaMontosVendidos: MontosVendidos;
+  listaMontosVendidos: MontosVendidos;
 
   constructor(private _htto: HttpClient, private _service: ServicioService) { }
 
