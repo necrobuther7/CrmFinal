@@ -15,6 +15,9 @@ import { LoginComponent } from '../../login/login.component';
 
 // protección a rutas
 import { GuardsGeneralGuard } from '../../guards/guards-general.guard';
+import { ClienteComponent } from 'app/dashboard/componentes/cliente/cliente.component';
+import { ProductoComponent } from 'app/dashboard/componentes/producto/producto.component';
+import { VentaComponent } from 'app/dashboard/componentes/venta/venta.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'login',          component: LoginComponent            },
@@ -27,4 +30,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent,             canActivate: [GuardsGeneralGuard] },
     { path: 'notifications',  component: NotificationsComponent,    canActivate: [GuardsGeneralGuard] },
     { path: 'upgrade',        component: UpgradeComponent,          canActivate: [GuardsGeneralGuard] },
+    { path: 'clientekpi',     component: ClienteComponent,          canActivate: [GuardsGeneralGuard] },
+    { path: 'productokpi',    component: ProductoComponent,         canActivate: [GuardsGeneralGuard] },
+    { path: 'ventaskpi',      component: VentaComponent,            canActivate: [GuardsGeneralGuard] },
 ];

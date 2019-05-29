@@ -24,6 +24,9 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+import { ClienteComponent } from 'app/dashboard/componentes/cliente/cliente.component';
+import { VentaComponent } from 'app/dashboard/componentes/venta/venta.component';
+import { ProductoComponent } from 'app/dashboard/componentes/producto/producto.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -47,6 +50,9 @@ import {
     NotificationsComponent,
     UpgradeComponent,
     LoginComponent,
+    ClienteComponent,
+    VentaComponent,
+    ProductoComponent,
   ]
 })
 

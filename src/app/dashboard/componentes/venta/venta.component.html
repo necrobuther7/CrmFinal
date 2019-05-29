@@ -1,0 +1,72 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <h1>Modulo de indicadores (KPI)</h1>
+      <h2>Categoria venta</h2>
+      <form>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="desde">Desde</label>
+            <input name="desde" type="date" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="desde">Hasta</label>
+            <input name="hasta" type="date" class="form-control" />
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="from-group">
+            <label for="categoria">Categoria</label>
+            <select class="form-control" class="form-control" >
+              <option value="categoria1">Categoria 1</option>
+              <option value="categoria2">Categoria 2</option>
+              <option value="categoria3">Categoria 3</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="from-group">
+            <label for="tipo">Tipo</label>
+            <select class="form-control" class="form-control" >
+                <option value="tipo1">Tipo 1</option>
+                <option value="tipo1">Tipo 2</option>
+                <option value="tipo1">Tipo 3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="Consultar" class="btn btn-sucess"/>
+    </form>
+    <br/>
+    <br/>
+    <br/>
+    <div class="card">
+      <div class="card-header card-header-warning" >
+        <h4 class="card-title">CONSULTA MONTOS VENDIDOS POR MES Y POR VENDEDOR</h4>
+        <p class="card-category">Se consulta el total de ventas por cada vendedor categorizado por mes.</p>
+      </div>
+      <div class="card-content table-responsive table-full-width">
+        <table class="table">
+          <thead class="text-secondary">
+            <th>NOMBRE DEL VENDEDOR</th>
+            <th>APELLIDO DEL VENDEDOR</th>
+            <th>MES DEL AÑO</th>
+            <th>TOTAL VENDIDO EN EL MES</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let lista of listaMontosVendidos">
+              <th scope="row">{{lista.nombre}}</th>
+              <th>{{lista.apellido}}</th>
+              <th>{{lista.mes}}</th>
+              <th>{{lista.total | currency}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+      <input type="button" class="btn btn-info" value="Regresar a pagina anterior" [routerLink]="['/dashboard']"/>
+    </div>
+  </div>
