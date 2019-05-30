@@ -9,6 +9,11 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { SeguimientoComponent } from '../../seguimiento/seguimiento/seguimiento.component';
+import { RegistrarinteraccionComponent } from '../../seguimiento/registrarinteraccion/registrarinteraccion.component';
+import { RegistrarpqrsComponent } from '../../seguimiento/registrarpqrs/registrarpqrs.component';
+import { CrearinteraccionComponent } from '../../seguimiento/crearinteraccion/crearinteraccion.component';
+import { CrearpqrsComponent } from '../../seguimiento/crearpqrs/crearpqrs.component';
 
 // personalizados
 import { LoginComponent } from '../../login/login.component';
@@ -27,6 +32,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'editar',         component: EditarComponent,           canActivate: [GuardsGeneralGuard] },
     { path: 'typography',     component: TypographyComponent,       canActivate: [GuardsGeneralGuard] },
     { path: 'icons',          component: IconsComponent,            canActivate: [GuardsGeneralGuard] },
+    { path: 'seguimiento',    component: SeguimientoComponent,      canActivate: [GuardsGeneralGuard] },
+    { path: 'crearpqrs',      component: CrearpqrsComponent,        canActivate: [GuardsGeneralGuard] },
+    { path: 'crearinteraccion',    component: CrearinteraccionComponent,      canActivate: [GuardsGeneralGuard] },
+    { path: 'registrarinteraccion',    component: RegistrarinteraccionComponent,      canActivate: [GuardsGeneralGuard] },
+    { path: 'registrarpqrs',    component: RegistrarpqrsComponent,      canActivate: [GuardsGeneralGuard] },
     { path: 'maps',           component: MapsComponent,             canActivate: [GuardsGeneralGuard] },
     { path: 'notifications',  component: NotificationsComponent,    canActivate: [GuardsGeneralGuard] },
     { path: 'upgrade',        component: UpgradeComponent,          canActivate: [GuardsGeneralGuard] },

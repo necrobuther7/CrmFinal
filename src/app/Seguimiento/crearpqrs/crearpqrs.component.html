@@ -1,0 +1,121 @@
+<div class="main-content">
+  <div class="container-fluid">
+          <div class="row">
+                  <button [routerLink]="['/seguimiento']" class="btn btn-primary btn-lg btn-warning" type="submit">Regresar</button>
+              </div>
+      <div class="card">
+          <div class="card-header card-header-warning">
+              <h2><span class="tim-note"></span>Crear PQRS</h2>
+          </div>
+          <div class="card-body">
+              <div id="crearpqrs">
+                  <div class="card-title">
+                  </div>
+                  <div class="row">
+
+                      <div class="col-md-12 order-md-2">
+                          <form (ngSubmit)="guardar()" #forma="ngForm">
+
+                              <div class="row">
+                                  <div class="form-group col-md-4 mb-4">
+                                      <label>Numero PQRS</label>
+                                      <input [(ngModel)]="Prs.Id_pqr" name="Id_pqr" type="number" class="form-control" placeholder="Id_pqr">
+                                      <div class="invalid-feedback">
+                                          Valid first name is required.
+                                      </div>
+                                  </div>
+
+                                  <!-- [(ngModel)]="pqrs.tipo_pqr" -->
+                                  <div class="col-md-4 mb-4">
+                                      <label for="tipo_pqr">Tipo PQRS</label>
+                                      <select  name="tipo_pqr" class="form-control" required=""> -->
+                                       <option value="">Seleccione...</option>
+                                        <option value="solicitud">Solicitud</option>
+                                        <option value="peticion">Petición</option>
+                                        <option value="queja">Queja</option>
+                                        <option value="reclamo">Reclamo</option>
+                                      </select>
+                                      <div class="invalid-feedback">
+                                          Please provide a valid state.
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group col-md-4 mb-4">
+                                      <label for="fecha">Fecha</label>
+                                      <!-- [(ngModel)]="pqrs.fecha" -->
+                                      <input  type="date" name="fecha" class="form-control" placeholder="yyyy-MM-dd">
+                                      <div class="invalid-feedback">
+                                          Valid first name is required.
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="row">
+
+                                  <div class="col-md-4 mb-4">
+                                      <label for="idCliente">Id Cliente</label>
+                                      <!-- [(ngModel)]="pqrs.idCliente" -->
+                                      <input  name="idCliente" type="text" class="form-control" placeholder="" value="" required="">
+                                      <div class="invalid-feedback">
+                                          Valid last name is required.
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-4 mb-4">
+                                      <label for="estado">Estado</label>
+                                      <!-- [(ngModel)]="pqrs.estado" -->
+                                      <select  name="estado" class="form-control" required=""> -->
+                                       </select>
+                                      <option value="creacion">Creación</option>
+
+
+                                      <div class="invalid-feedback">
+                                          Please provide a valid state.
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-4 mb-4">
+                                      <label for="comunicacion">Comunicacion</label>
+                                       <!-- [(ngModel)]="pqrs.comunicacion"  -->
+                                      <input  name="comunicacion" type="text" class="form-control" placeholder="" value="" required="">
+                                      <div class="invalid-feedback">
+                                          Valid last name is required.
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="row">
+                                  <div class="col-md-12 mb-12">
+                                      <label for="descripcion">Descripción</label>
+                                      <!-- [(ngModel)]="pqrs.descripcion"  -->
+                                      <textarea name="descripcion" type="text" class="form-control" placeholder="" value="" required=""> 
+                                       </textarea> 
+                                  </div>
+                              </div>
+
+                              <br/><br/>
+
+                              <div class="row center">
+                                  <div class="col-md-5 mb-5"></div>
+
+                                  <div class="col-md-2">
+                                      <div class="form-control">
+                                          <button [disabled]="!forma.valid" class="btn btn-primary btn-lg btn-warning" type="submit">Crear</button>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-5 mb-5"></div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
+</script>
+<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<script src="form-validation.js"></script>

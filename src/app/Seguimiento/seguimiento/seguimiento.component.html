@@ -1,0 +1,61 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="card">
+          <div class="card-header card-header-danger">
+              <h4 class="card-title">Modulo Seguimiento</h4>
+          </div>
+          <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card card-stats">
+                      <div class="card-header card-header-warning card-header-icon">
+
+
+                          <div class="card-icon">
+                              <i class="fa fa-handshake-o"></i>
+                          </div>
+
+                          <h3 class="card-title">Crear PQRS
+                          </h3>
+                          <button [routerLink]="['/crearpqrs']" class="btn btn-primary btn-lg btn-warning" type="submit">Crear</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card card-stats">
+                      <div class="card-header card-header-success card-header-icon">
+                          <div class="card-icon">
+                              <i class="fa fa-users"></i>
+                          </div>
+                          <h3 class="card-title">Gestionar PQRS</h3>
+                          <button [routerLink]="['/registrarpqrs']" class="btn btn-primary btn-lg btn-success" type="submit">Gestionar</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card card-stats">
+                      <div class="card-header card-header-danger card-header-icon">
+                          <div class="card-icon">
+                              <i class="fa fa-check-square"></i>
+                          </div>
+                          <h3 class="card-title">Crear Interacción</h3>
+                      <!-- <button  type="button">Gestionar</button> -->
+                          <button [routerLink]="['/crearinteraccion']" class="btn btn-primary btn-lg btn-danger" type="submit">Crear</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card card-stats">
+                      <div class="card-header card-header-info card-header-icon">
+                          <div class="card-icon">
+                              <i class="fa fa-briefcase"></i>
+                          </div>
+                          <h3 class="card-title">Gestionar Interacción</h3>
+                          <button [routerLink]="['/registrarinteraccion']" class="btn btn-primary btn-lg btn-info" type="submit">Gestionar</button>
+                      </div>
+                  </div>
+              </div>
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+  </div>
+</div>

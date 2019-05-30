@@ -1,0 +1,378 @@
+<div class="main-content">
+  <div class="container-fluid">
+          <div class="row">
+                  <button [routerLink]="['/seguimiento']" class="btn btn-primary btn-lg btn-info" type="submit">Regresar</button>
+              </div>
+      <div class="card">
+          <div class="card-header card-header-info">
+              <h2><span class="tim-note"></span>Gestionar Interacción</h2>
+          </div>
+          <div class="card-body">
+              <div id="crearpqrs">
+                  <div class="card-title">
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12 order-md-2">
+                          <form #forma="ngForm">
+                              <div class="row">
+                                  <div class="form-group col-md-4 mb-4">
+                                      <label for="id_interaccion">Numero Interacción</label>
+                                      <!-- [(ngModel)]="interaccion.id_interaccion" -->
+                                      <input  name="id_interaccion" class="form-control" placeholder="id">
+                                      <div class="invalid-feedback">
+                                          Valid first name is required.
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-4 mb-4">
+                                      <label for="objetivo_interaccion">Objetivo</label>
+                                      <!-- [(ngModel)]="interaccion.objetivo_interaccion" -->
+                                      <select  name="objetivo_interaccion" class="form-control" id="objetivo_interaccion" required="">
+                                                <option value="">Seleccione...</option>
+                                                                                    <option value="NuevoCliente">Nuevo cliente</option>
+                                                                                    <option value="SolicitudOferta">Solicitud Oferta</option>
+                                                                                    <option value="SolicitudVisita">Solicitud Visita</option>
+                                                                                    <option value="NuevoPedido">Nuevo Pedido</option>
+                                                                                  </select>
+                                      <div class="invalid-feedback">
+                                          Please provide a valid state.
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group col-md-4 mb-4">
+                                      <label for="fecha_interaccion">Fecha</label>
+                                      <!-- [(ngModel)]="interaccion.fecha_interaccion" -->
+                                      <input  type="date" name="fecha" class="form-control" placeholder="yyyy-MM-dd">
+                                      <div class="invalid-feedback">
+                                          Valid first name is required.
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="row">
+
+                                  <div class="col-md-4 mb-4">
+                                      <label for="tipo_interaccion">Interacción</label>
+                                      <!-- [(ngModel)]="interaccion.tipo_interaccion" -->
+                                      <select  name="tipo_interaccion" class="form-control" id="tipo_interaccion" required="">
+                                                                                        <option value="">Seleccione...</option>              
+                                                                                        <option value="correo">Correo Electronico</option>
+                                                                                        <option value="paginaWeb">Pagina Web</option>
+                                                                                      </select>
+                                      <div class="invalid-feedback">
+                                          Please provide a valid state.
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-4 mb-4">
+                                      <label for="estado_interaccion">Estado</label>
+                                      <!-- [(ngModel)]="interaccion.estado_interaccion" -->
+                                      <select  name="estado_interaccion" class="form-control" id="estado_interaccion" required="">
+                                                                                            <option value="">Seleccione...</option>                 
+                                                                                            <option value="creacion">Abierta</option>
+                                                                                            <option value="creacion">Cerrada</option>
+                                              </select>
+                                      <div class="invalid-feedback">
+                                          Please provide a valid state.
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-4 mb-4">
+                                      <label for="id_cliente">Id Cliente</label>
+                                      <!-- [(ngModel)]="interaccion.id_cliente" -->
+                                      <input  name="id_cliente" type="text" class="form-control" id="id_cliente" placeholder="" value="" required="">
+                                      <div class="invalid-feedback">
+                                          Valid last name is required.
+                                      </div>
+                                  </div>
+
+                              </div>
+
+                              <div class="row">
+                                  <div class="col-md-6 mb-6">
+                                      <label for="acuerdos_interaccion">Acuerdos</label>
+                                      <!-- [(ngModel)]="interaccion.acuerdos_interaccion" -->
+                                      <textarea  name="acuerdos_interaccion" type="text" class="form-control" id="acuerdos_interaccion" placeholder="" value="" required=""> 
+                                              </textarea>
+                                  </div>
+
+                                  <div class="col-md-6 mb-6">
+                                      <label for="propuestas_al_cliente">Propuesta</label>
+                                      <!-- [(ngModel)]="interaccion.propuestas_al_cliente" -->
+                                      <textarea name="propuestas_al_cliente" type="text" class="form-control" id="propuestas_al_cliente" placeholder="" value="" required="">        
+                                      </textarea>
+                                  </div>
+                              </div>
+
+                              <div class="row">
+                                  <div class="col-md-6 mb-6">
+                                      <label for="comentarios_del_cliente">Comentarios</label>
+                                      <!-- [(ngModel)]="interaccion.comentarios_del_cliente" -->
+                                      <textarea  name="comentarios_del_cliente" type="text" class="form-control" id="comentarios_del_cliente" placeholder="" value="" required=""> 
+                                                                                  </textarea>
+                                  </div>
+
+                                  <div class="col-md-6 mb-6">
+                                      <label for="observacion_interaccion">Observación</label>
+                                      <!-- [(ngModel)]="interaccion.observacion_interaccion"-->
+                                      <textarea  name="observacion_interaccion" type="text" class="form-control" id="observacion_interaccion" placeholder="" value="" required="">        
+                                      </textarea>
+                                  </div>
+                              </div>
+                              <div class="row center">
+                                  <div class="col-md-2 mb-2"></div>
+
+                                  <div class="col-md-2">
+                                      <div class="form-control">
+                                          <button [disabled]="!forma.valid" class="btn btn-primary btn-lg btn-info" type="submit">Consultar</button>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-1 mb-1"></div>
+                                  <div class="col-md-2">
+                                      <div class="form-control">
+                                          <button [disabled]="!forma.valid" class="btn btn-primary btn-lg btn-info" type="submit">Modificar</button>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-1 mb-1"></div>
+                                  <div class="col-md-2">
+                                      <div class="form-control">
+                                          <button [disabled]="!forma.valid" class="btn btn-primary btn-lg btn-info" type="submit">Eliminar</button>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-2 mb-2"></div>
+                              </div>
+
+                              <br/>
+
+                              <div class="card-body">
+                                  <div class="table-responsive">
+                                      <table class="table">
+                                          <thead class=" text-primary">
+                                              <tr>
+                                                  <th scope="col">#</th>
+                                                  <th scope="col">Objetivo</th>
+                                                  <th scope="col">Fecha</th>
+                                                  <th scope="col">Interacción</th>
+                                                  <th scope="col">Estado</th>
+                                                  <th scope="col">Id Cliente</th>
+                                                  <th scope="col">Acuerdo</th>
+                                                  <th scope="col">Propuesta</th>
+                                                  <th scope="col">Comentarios</th>
+                                                  <th scope="col">Observación</th>
+                                              </tr>
+
+                                          </thead>
+                                          <tbody>
+                                              <tr>
+                                                  <td>
+                                                      1
+                                                  </td>
+                                                  <td>
+                                                      Nuevo Cliente
+                                                  </td>
+                                                  <td>
+                                                      01/05/2019
+                                                  </td>
+                                                  <td>
+                                                      Correo Electronico
+                                                  </td>
+                                                  <td>
+                                                          Cerrada
+                                                  </td>
+                                                  <td>
+                                                          Laura Osorio
+                                                      </td>
+                                                      <td>
+                                                          N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                  </td>
+                                                  <td>
+                                                          N/a
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      2
+                                                  </td>
+                                                  <td>
+                                                      Nuevo Cliente
+                                                  </td>
+                                                  <td>
+                                                      08/05/2019
+                                                  </td>
+                                                  <td>
+                                                          Correo Electronico
+                                                  </td>
+                                                  <td>
+                                                          Cerrada
+                                                  </td>
+                                                  <td>
+                                                          Roberto gordillo
+                                                      </td>
+                                                      <td>
+                                                          N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                  </td>
+                                                  <td>
+                                                          N/a
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      3
+                                                  </td>
+                                                  <td>
+                                                      Nuevo Cliente
+                                                  </td>
+                                                  <td>
+                                                      13/05/2019
+                                                  </td>
+                                                  <td>
+                                                          Correo Electronico
+                                                  </td>
+                                                  <td >
+                                                          Cerrada
+                                                  </td>
+                                                  <td>
+                                                          Jhonathan Fernandez
+                                                      </td>
+                                                      <td>
+                                                          N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                  </td>
+                                                  <td>
+                                                          N/a
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      4
+                                                  </td>
+                                                  <td>
+                                                      Solicitud Oferta 
+                                                  </td>
+                                                  <td>
+                                                          15/05/2019
+                                                  </td>
+                                                  <td>
+                                                          Correo Electronico
+                                                  </td>
+                                                  <td >
+                                                          Cerrada
+                                                  </td>
+                                                  <td>
+                                                          Camila Gonzalez
+                                                      </td>
+                                                      <td>
+                                                          N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                  </td>
+                                                  <td>
+                                                          N/a
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      5
+                                                  </td>
+                                                  <td>
+                                                      Solicitud Visita 
+                                                  </td>
+                                                  <td>
+                                                          21/05/2019
+                                                  </td>
+                                                  <td>
+                                                          pagina Web
+                                                  </td>
+                                                  <td >
+                                                          Abierta
+                                                  </td>
+                                                  <td>
+                                                          Cindy Pinto
+                                                      </td>
+                                                      <td>
+                                                          N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                  </td>
+                                                  <td>
+                                                          N/a
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      6
+                                                  </td>
+                                                  <td>
+                                                      Nuevo Pedido 
+                                                  </td>
+                                                  <td>
+                                                          23/05/2019
+                                                  </td>
+                                                  <td>
+                                                      pagina Web
+                                                  </td>
+                                                  <td >
+                                                      Abierta
+                                                  </td>
+                                                  <td>
+                                                          Julian Rodriguez
+                                                      </td>
+                                                      <td>
+                                                          N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                      </td>
+                                                      <td>
+                                                              N/a
+                                                  </td>
+                                                  <td>
+                                                          N/a
+                                                  </td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
+</script>
+<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<script src="form-validation.js"></script>

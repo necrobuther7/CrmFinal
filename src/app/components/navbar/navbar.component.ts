@@ -138,7 +138,7 @@ export class NavbarComponent implements OnInit {
         return 'Módulo de Gestión de Contactos.';
         case 'table-list':
         return 'Módulo de Flujo de Tareas.';
-        case 'no-esta':
+        case 'seguimiento':
         return 'Módulo de Seguimiento de Interacciones.';
       }
       return titleSplit;

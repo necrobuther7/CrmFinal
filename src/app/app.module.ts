@@ -26,6 +26,11 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+// import { CrearinteraccionComponent } from './seguimiento/crearinteraccion/crearinteraccion.component';
+// import { CrearpqrsComponent } from './seguimiento/crearpqrs/crearpqrs.component';
+// import { RegistrarinteraccionComponent } from './seguimiento/registrarinteraccion/registrarinteraccion.component';
+// import { RegistrarpqrsComponent } from './seguimiento/registrarpqrs/registrarpqrs.component';
+// import { SeguimientoComponent } from './seguimiento/seguimiento/seguimiento.component';
 // import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -45,6 +50,11 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    // CrearinteraccionComponent,
+    // CrearpqrsComponent,
+    // RegistrarinteraccionComponent,
+    // RegistrarpqrsComponent,
+    // SeguimientoComponent,
     // LoginComponent,
   ],
   providers: [AuthService],

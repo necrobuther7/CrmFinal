@@ -12,6 +12,11 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { SeguimientoComponent } from '../../seguimiento/seguimiento/seguimiento.component';
+import { RegistrarinteraccionComponent } from '../../seguimiento/registrarinteraccion/registrarinteraccion.component';
+import { RegistrarpqrsComponent } from '../../seguimiento/registrarpqrs/registrarpqrs.component';
+import { CrearinteraccionComponent } from '../../seguimiento/crearinteraccion/crearinteraccion.component';
+import { CrearpqrsComponent } from '../../seguimiento/crearpqrs/crearpqrs.component';
 
 // personalizadas
 import { LoginComponent } from '../../login/login.component';
@@ -53,6 +58,11 @@ import { ProductoComponent } from 'app/dashboard/componentes/producto/producto.c
     ClienteComponent,
     VentaComponent,
     ProductoComponent,
+    SeguimientoComponent,
+    RegistrarinteraccionComponent,
+    RegistrarpqrsComponent,
+    CrearinteraccionComponent,
+    CrearpqrsComponent,
   ]
 })
 
