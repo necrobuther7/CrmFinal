@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'app/dashboard/servicio/servicio.service';
-import { HttpClient } from '@angular/common/http';
+import { ClientesZona } from 'app/dashboard/modelo/clientes-zona';
 
 @Component({
   selector: 'app-cliente',
@@ -9,16 +9,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClienteComponent implements OnInit {
 
-  constructor(private _service : ServicioService, private _http: HttpClient) { }
+  constructor(private _service : ServicioService) { }
 
   ngOnInit() {
-    this.consultarIndiceDeFidelizacion();
+    this.consultarCantidadDeClientesPorZona();
   }
 
-  indiceDeFidelizacion: any = null;
-  consultarIndiceDeFidelizacion() {
-    this._service.consultarIndideDeFidelizacion().subscribe((res) => {
-      this.indiceDeFidelizacion = res;
+  clientesZona: ClientesZona;
+
+  consultarCantidadDeClientesPorZona() {
+    this._service.consultarCantidadDeClientesPorZona().subscribe((res) => {
+      this.clientesZona = res;
     });
   }
 

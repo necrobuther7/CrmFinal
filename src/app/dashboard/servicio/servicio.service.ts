@@ -6,15 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServicioService {
 
-  private url: string = "http://localhost:8080/adaptador/";
+  private url: string = "https://crm-kpi.herokuapp.com/adaptador/";
+  private _url: string = "https://kpi-crm.herokuapp.com/adaptador/";
 
   constructor(private _http: HttpClient) { }
 
-  consultarIndideDeFidelizacion(){
-    return this._http.get(this.url + "consultarElIndiceDeFidelizacion");
+  consultarCantidadDeClientesPorZona(){
+    return this._http.get<any>(this._url + "consultarCantidadDeClientesPorZona");
   }
 
-  consultarMontosVendidosPorMesPorVendedor(){
-    return this._http.get<any>(this.url + "consultarMontosVendidosPorMesPorVendedor")
+  consultarNumeroDeProductosVendidosPorAnio(){
+    return this._http.get<any>(this.url + "consultarNumeroDeProductosVendidosPorAnio");
   }
+
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MontosVendidos } from 'app/dashboard/modelo/montos-vendidos';
 import { ServicioService } from 'app/dashboard/servicio/servicio.service';
 
 @Component({
@@ -10,17 +9,11 @@ import { ServicioService } from 'app/dashboard/servicio/servicio.service';
 })
 export class VentaComponent implements OnInit {
 
-  listaMontosVendidos: MontosVendidos;
 
   constructor(private _htto: HttpClient, private _service: ServicioService) { }
 
   ngOnInit() {
-    this.consultarMontosVendidosPorMesPorVendedor();
+
   }
 
-  consultarMontosVendidosPorMesPorVendedor(){
-    this._service.consultarMontosVendidosPorMesPorVendedor().subscribe((res)  => {
-      this.listaMontosVendidos = res;
-    });
-  }
 }
