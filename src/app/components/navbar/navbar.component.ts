@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
-import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -36,6 +36,13 @@ export class NavbarComponent implements OnInit {
            this.mobile_menu_visible = 0;
          }
      });
+    }
+
+    logoutBtn() {
+        if (this.auth.getSession()) {
+        return true;
+        }
+    return false;
     }
 
     sidebarOpen() {
@@ -119,16 +126,20 @@ export class NavbarComponent implements OnInit {
       switch (titleSplit) {
         case 'login':
         return 'Zona de Ingreso.';
-        break;
         case 'dashboard':
         return 'Módulo de Generador de KPI\'s (Gráficos e informes).';
-        break;
+        case 'clientekpi':
+        return 'Indicadores por Clientes - Generador de KPI\'s.';
+        case 'productokpi':
+        return 'Indicadores por Productos - Generador de KPI\'s.';
+        case 'ventaskpi':
+        return 'Indicadores por Ventas- Generador de KPI\'s.';
         case 'user-profile':
         return 'Módulo de Gestión de Contactos.';
-        break;
         case 'table-list':
-        return 'Módulo de Interacciones.';
-        break;
+        return 'Módulo de Flujo de Tareas.';
+        case 'no-esta':
+        return 'Módulo de Seguimiento de Interacciones.';
       }
       return titleSplit;
     }
@@ -149,7 +160,7 @@ export class NavbarComponent implements OnInit {
     }
 
     logout() {
-        let message = 'Su sesión a finalizado. Vuelva Pronto...';
+        const message = 'Su sesión a finalizado. Vuelva Pronto...';
         this.auth.exitSession();
         this.auth.showNotification('top', 'right', message, 1, 0);
         // espera de 3.5 milisegundos para inicio de sesión

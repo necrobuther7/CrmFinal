@@ -67,4 +67,5 @@ export class LoginComponent implements OnInit {
         this.usuario = user;
     })
   }
+
 }

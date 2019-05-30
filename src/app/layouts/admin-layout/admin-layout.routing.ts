@@ -12,12 +12,12 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 
 // personalizados
 import { LoginComponent } from '../../login/login.component';
-
-// protección a rutas
-import { GuardsGeneralGuard } from '../../guards/guards-general.guard';
 import { ClienteComponent } from 'app/dashboard/componentes/cliente/cliente.component';
 import { ProductoComponent } from 'app/dashboard/componentes/producto/producto.component';
 import { VentaComponent } from 'app/dashboard/componentes/venta/venta.component';
+
+// protección a rutas
+import { GuardsGeneralGuard } from '../../guards/guards-general.guard';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'login',          component: LoginComponent            },

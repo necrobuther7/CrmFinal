@@ -14,7 +14,7 @@ import { DataSource } from '@angular/cdk/table';
 export class TableListComponent implements OnInit {
 
     pqrs:Pqr[];
-    Url='http://54.224.238.170:8080';
+    Url='https://54.224.238.170:8443';
     
     constructor(private router: Router, private http:HttpClient) {
         this.http.get<Pqr[]>(this.Url + '/pqr/consultar/')

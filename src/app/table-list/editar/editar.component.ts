@@ -12,7 +12,7 @@ import { Estado } from '../../Models/Estado';
 export class EditarComponent implements OnInit {
 
     pqr :Pqr= new Pqr();
-    Url='http://54.224.238.170:8080';
+    Url='https://54.224.238.170:8443';
 
     estados: Estado[] = [
     {id_estado: 1, estado: 'Activo'},
@@ -43,6 +43,7 @@ export class EditarComponent implements OnInit {
    this.http.put<Pqr>(this.Url+"/pqr/actualizar/"+pqr.id_pqr, pqr)
     .subscribe(data=>{
         this.pqr=data;
+        localStorage.removeItem('id');
         this.router.navigate(["table-list"]);
     })
   }

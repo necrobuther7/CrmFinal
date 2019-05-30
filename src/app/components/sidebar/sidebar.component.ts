@@ -12,13 +12,14 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     { path: '/login', title: 'Ingresar',  icon: 'account_circle', class: '' },
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'Mi Información',  icon: 'person', class: '' },
-    { path: '/table-list', title: 'Mis Tareas',  icon: 'content_paste', class: '' },
+    { path: '/dashboard', title: 'Dashboard',  icon: 'assessment', class: '' },
+    { path: '/user-profile', title: 'Contactos',  icon: 'perm_identity', class: '' },
+    { path: '/no-esta', title: 'Seguimiento', icon: 'supervisor_account', class: '' },
+    { path: '/table-list', title: 'Flujo de Tareas',  icon: 'assignment', class: '' }
     // { path: '/typography', title: 'Typography',  icon: 'library_books', class: '' },
     // { path: '/icons', title: 'Icons',  icon: 'bubble_chart', class: '' },
     // { path: '/maps', title: 'Maps',  icon: 'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon: 'notifications', class: '' }
+    // { path: '/notifications', title: 'Notifications',  icon: 'notifications', class: '' }
     // { path: '/upgrade', title: 'Upgrade to PRO',  icon: 'unarchive', class: 'active-pro' },
 ];
 
@@ -37,8 +38,14 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
+  logoutBtn() {
+    if (this.auth.getSession()) {
+      return true;
+    }
+  return false;
+  }
   logout() {
-    let message = 'Su sesión a finalizado. Vuelva Pronto...';
+    const message = 'Su sesión a finalizado. Vuelva Pronto...';
     this.auth.exitSession();
     this.auth.showNotification('top', 'right', message, 1, 0);
     // espera de 3.5 milisegundos para inicio de sesión
